@@ -1,0 +1,16 @@
+.react-pulldown{
+  position: relative;
+}
+.react-pulldown-tip{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4vh;
+  color: #ccc;
+  font-size: 2vh;
+  line-height: 4vh;
+  text-align: center;
+  transform: translateY(-4vh);
+  -webkit-transform: translateY(-4vh);
+}
