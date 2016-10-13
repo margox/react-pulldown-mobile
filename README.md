@@ -82,7 +82,7 @@ html,body{
 npm i && npm run sample && open localhost:5998
 ```
 
-### 租减属性
+### 组件属性
 | 属性名                | 类型          | 说明    |
 | ---------------------- | ------------- | :----- |
 | container | String | 下拉容器的querySelector选择器字符串，默认是当前父元素 |

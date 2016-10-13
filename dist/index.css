@@ -1,16 +1,33 @@
 .react-pulldown{
-  position: relative;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
 }
-.react-pulldown-tip{
-  position: absolute;
+.react-pulldown-background-layer{
+  position: fixed;
+  z-index: -1;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.react-pulldown-top-tip,
+.react-pulldown-bottom-tip{
+  position: absolute;
   left: 0;
   width: 100%;
-  height: 4vh;
+  height: 40px;
   color: #ccc;
-  font-size: 2vh;
-  line-height: 4vh;
+  font-size: 14px;
+  line-height: 40px;
   text-align: center;
-  transform: translateY(-4vh);
-  -webkit-transform: translateY(-4vh);
+}
+.react-pulldown-top-tip{
+  top: 0;
+  transform: translateY(-40px);
+  -webkit-transform: translateY(-40px);
+}
+.react-pulldown-bottom-tip{
+  bottom: 0;
+  transform: translateY(40px);
+  -webkit-transform: translateY(40px);
 }
