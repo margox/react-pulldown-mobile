@@ -92,6 +92,8 @@ npm i && npm run sample && open localhost:5998
 | bottomTip| String | 上推露出的底部区域的提示文字 |
 | threshold | Number | 下拉/上推完成阈值，默认是200 |
 | sensitivity | Number | 下拉/上推灵敏度，请传入0.1-1的数字，默认是0.4 |
+| enablePull | Boolean | 开启下拉功能，默认true |
+| enablePush | Boolean | 开启上推功能，默认true | 
 | onPullCancel | Function | 取消下拉后执行的回调函数 |
 | onPullDown | Function | 达到下拉阈值后执行的回调函数 |
 | onPullMove | Function | 下拉过程中指定的回调函数，可以从参数获取到位移、阈值、灵敏度 |
