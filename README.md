@@ -79,7 +79,7 @@ html,body{
 该示例已经包含在git项目中，要亲自感受，可以clone此项目，然后在项目目录执行以下命令
 
 ```
-npm i && npm run sample && open localhost:5995
+npm i && npm run sample && open localhost:5998
 ```
 
 ### 租减属性
