@@ -1,7 +1,7 @@
 {
   "name": "react-pulldown-mobile",
-  "version": "2.0.2",
-  "description": "a react pulldown component",
+  "version": "2.0.3",
+  "description": "一个简单的react下拉/上推组件",
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist/ && ./node_modules/.bin/babel src --copy-files --source-maps --extensions .es6,.es,.js,.jsx --out-dir dist && cp ./src/*.css ./dist/",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/59fe/react-pulldown.git"
+    "url": "git+https://github.com/margox/react-pulldown-mobile.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   "author": "Margox",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/59fe/react-pulldown/issues"
+    "url": "https://github.com/margox/react-pulldown-mobile/issues"
   },
-  "homepage": "https://github.com/59fe/react-pulldown#readme",
+  "homepage": "https://github.com/margox/react-pulldown-mobile#readme",
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-preset-es2015": "^6.5.0",
