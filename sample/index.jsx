@@ -4,41 +4,52 @@ import PullDown from '../src'
 
 class PullDownDemo extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: new Array(20).fill('')
+    }
+  }
+
   render() {
 
     return (
       <div className="container">
         <PullDown
           className="foo"
-          topTip="pull down to reload"
-          bottomTip="push up to load more"
+          topTip="PULL DOWN TO RELOAD"
+          bottomTip="PUSH UP TO LOAD MORE"
           onPullDown={() => {
-            console.log('pull down')
-          }}
-          onPullCancel={() => {
-            console.log('pull cancel')
-          }}
-          onPullMove={(v) => {
-            console.log('pull move')
+            this.reload()
           }}
           onPushUp={() => {
-            console.log('push up')
-          }}
-          onPushCancel={() => {
-            console.log('push cancel')
-          }}
-          onPushMove={(v) => {
-            console.log('push move')
+            this.loadMore()
           }}
         >
           <div className="contents">
-          {new Array(30).fill('').map((v, i) => {
-            return <div key={i} className="item"></div>
+          {this.state.items.map((v, i) => {
+            return <div key={i} className="item"><span>{i + 1}</span></div>
           })}
           </div>
         </PullDown>
       </div>
     )
+
+  }
+
+  reload() {
+
+    this.setState({
+      items: new Array(20).fill('')
+    })
+
+  }
+
+  loadMore() {
+
+    this.setState({
+      items: [ ...this.state.items, ...new Array(15).fill('') ]
+    })
 
   }
 

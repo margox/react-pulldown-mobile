@@ -1,6 +1,6 @@
 {
   "name": "react-pulldown-mobile",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "一个简单的react下拉/上推组件",
   "main": "dist/index.js",
   "scripts": {

@@ -10,36 +10,31 @@ import PullDown from '../src'
 
 class PullDownDemo extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: new Array(20).fill('')
+    }
+  }
+
   render() {
 
     return (
       <div className="container">
         <PullDown
           className="foo"
-          topTip="pull down to reload"
-          bottomTip="push up to load more"
+          topTip="PULL DOWN TO RELOAD"
+          bottomTip="PUSH UP TO LOAD MORE"
           onPullDown={() => {
-            console.log('pull down')
-          }}
-          onPullCancel={() => {
-            console.log('pull cancel')
-          }}
-          onPullMove={(v) => {
-            console.log('pull move')
+            this.reload()
           }}
           onPushUp={() => {
-            console.log('push up')
-          }}
-          onPushCancel={() => {
-            console.log('push cancel')
-          }}
-          onPushMove={(v) => {
-            console.log('push move')
+            this.loadMore()
           }}
         >
           <div className="contents">
-          {new Array(30).fill('').map((v, i) => {
-            return <div key={i} className="item"></div>
+          {this.state.items.map((v, i) => {
+            return <div key={i} className="item"><span>{i + 1}</span></div>
           })}
           </div>
         </PullDown>
@@ -48,32 +43,25 @@ class PullDownDemo extends React.Component {
 
   }
 
+  reload() {
+
+    this.setState({
+      items: new Array(20).fill('')
+    })
+
+  }
+
+  loadMore() {
+
+    this.setState({
+      items: [ ...this.state.items, ...new Array(15).fill('') ]
+    })
+
+  }
+
 }
 
 ReactDOM.render(<PullDownDemo />, document.querySelector('#root'))
-```
-
-
-```css
-html,body{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #fff;
-}
-#root{
-  height: 100%;
-}
-.container{
-  height: 100%;
-  overflow: auto;
-}
-.item{
-  height: 60px;
-  background-color: #eee;
-  margin-bottom: 1px;
-}
 ```
 
 该示例已经包含在git项目中，要亲自感受，可以clone此项目，然后在项目目录执行以下命令
@@ -98,5 +86,5 @@ npm i && npm run sample && open http://localhost:5998
 | onPullDown | Function | 达到下拉阈值后执行的回调函数 |
 | onPullMove | Function | 下拉过程中指定的回调函数，可以从参数获取到位移、阈值、灵敏度 |
 | onPushCancel | Function | 取消上推后执行的回调函数 |
-| onPushDown | Function | 达到上推阈值后执行的回调函数 |
+| onPushUp | Function | 达到上推阈值后执行的回调函数 |
 | onPushMove | Function | 上推过程中指定的回调函数，可以从参数获取到位移、阈值、灵敏度 |
