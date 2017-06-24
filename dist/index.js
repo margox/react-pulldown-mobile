@@ -133,7 +133,7 @@ var PullDown = function (_React$Component) {
       var scrollTop = this.__container.scrollTop;
       var scrollBottom = contentHeight - containerHeight - scrollTop;
 
-      if ((scrollTop <= 0 || scrollBottom <= 0) && (this.__enablePull || this.__enablePush)) {
+      if ((scrollTop <= 5 || scrollBottom <= 5) && (this.__enablePull || this.__enablePush)) {
 
         this.__lastPageY = e.touches[0].pageY;
         this.setState({
@@ -150,7 +150,7 @@ var PullDown = function (_React$Component) {
       var scrollTop = this.__container.scrollTop;
       var scrollBottom = contentHeight - containerHeight - scrollTop;
 
-      if (scrollTop <= 0 || scrollBottom <= 0) {
+      if (scrollTop <= 5 || scrollBottom <= 5) {
 
         if (Math.abs(this.state.offset) < this.__threshold) {
 
@@ -192,7 +192,7 @@ var PullDown = function (_React$Component) {
       var scrollTop = this.__container.scrollTop;
       var scrollBottom = contentHeight - containerHeight - scrollTop;
 
-      if (scrollTop <= 0 && this.__enablePull) {
+      if (scrollTop <= 5 && this.__enablePull) {
 
         var offset = e.touches[0].pageY - this.__lastPageY;
         offset < 0 && (offset = 0);
@@ -208,7 +208,7 @@ var PullDown = function (_React$Component) {
         });
 
         this.setState({ offset: offset });
-      } else if (scrollBottom <= 0 && this.__enablePush) {
+      } else if (scrollBottom <= 5 && this.__enablePush) {
 
         var _offset = e.touches[0].pageY - this.__lastPageY;
         _offset > 0 && (_offset = 0);

@@ -91,7 +91,7 @@ class PullDown extends React.Component{
     let scrollTop = this.__container.scrollTop
     let scrollBottom = contentHeight - containerHeight - scrollTop
 
-    if ((scrollTop <= 0 || scrollBottom <= 0) && (this.__enablePull || this.__enablePush)) {
+    if ((scrollTop <= 5 || scrollBottom <= 5) && (this.__enablePull || this.__enablePush)) {
 
       this.__lastPageY = e.touches[0].pageY
       this.setState({
@@ -109,7 +109,7 @@ class PullDown extends React.Component{
     let scrollTop = this.__container.scrollTop
     let scrollBottom = contentHeight - containerHeight - scrollTop
 
-    if (scrollTop <= 0 || scrollBottom <= 0) {
+    if (scrollTop <= 5 || scrollBottom <= 5) {
 
       if (Math.abs(this.state.offset) < this.__threshold) {
 
@@ -155,7 +155,7 @@ class PullDown extends React.Component{
     let scrollTop = this.__container.scrollTop
     let scrollBottom = contentHeight - containerHeight - scrollTop
 
-    if (scrollTop <= 0 && this.__enablePull) {
+    if (scrollTop <= 5 && this.__enablePull) {
 
       let offset = e.touches[0].pageY - this.__lastPageY
       offset < 0 && (offset = 0)
@@ -172,7 +172,7 @@ class PullDown extends React.Component{
 
       this.setState({ offset })
 
-    } else if (scrollBottom <= 0 && this.__enablePush) {
+    } else if (scrollBottom <= 5 && this.__enablePush) {
 
       let offset = e.touches[0].pageY - this.__lastPageY
       offset > 0 && (offset = 0)
